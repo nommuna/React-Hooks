@@ -78,7 +78,7 @@ export default function SearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Typography id= "Title" className={classes.title} variant="h6" noWrap>
             Dashboard
           </Typography>
           <div className={classes.search}>

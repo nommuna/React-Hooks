@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <Fragment>
       <MenuBar></MenuBar>
       <Board></Board>
-      <BoardFetch></BoardFetch>
+      {/* <BoardFetch></BoardFetch> */}
     </Fragment>
   );
 }
