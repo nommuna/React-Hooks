@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,7 +8,10 @@ import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
-const Bar: React.FC = () => {
+interface Props {
+  data: any
+}
+const Menubar: React.FC<Props> = (props: Props) => {
 
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -67,6 +70,14 @@ const Bar: React.FC = () => {
 
   const classes = useStyles();
 
+  const [time, setTime] = useState("");
+  
+  setTimeout(() => {
+    let currentTime = new Date();
+    setTime(currentTime.toLocaleTimeString());
+  }, 1000)
+
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -80,7 +91,7 @@ const Bar: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Typography id="Title" className={classes.title} variant="h6" noWrap>
-            Dashboard
+            {props.data.Name} {time}
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -101,4 +112,4 @@ const Bar: React.FC = () => {
   );
 }
 
-export default Bar;
+export default Menubar;

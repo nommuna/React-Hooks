@@ -11,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Menubar from '../MenuBar/Menubar';
 
 const Board: React.FC = () => {
 
@@ -26,16 +27,23 @@ const Board: React.FC = () => {
       );
 
     const classes = useStyles();
+    const [appInfo, setAppInfo] = useState({Name: "App Name"});
+
+    // const changeTitle = (item: any) => {
+    //   console.log(item);
+    //   x = item;
+    // }
 
     return (
         <Fragment>
             <Container fixed>
+              <Menubar data = {appInfo}/>
                 <Grid container spacing={3}>
                     {data.map((item, i) => (
                         <Grid key = {i} item xs={3}>
                             <br/>
                             <Card className={classes.card}>
-                            <CardActionArea>
+                            <CardActionArea onClick= {() => setAppInfo(item as any)}>
                             <CardMedia
                                 className={classes.media}
                                 image="/static/images/cards/contemplative-reptile.jpg"

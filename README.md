@@ -42,3 +42,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Important Links that may help
+[Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+
+[Using a definition files](https://stackoverflow.com/questions/37263357/how-to-declare-and-import-typescript-interfaces-in-a-separate-file)
+
+[Definition files examples](https://github.com/DefinitelyTyped/DefinitelyTyped)
+
+[Run esLint as script](https://stackoverflow.com/questions/49446712/run-typescript-eslint-parser)
+
+
