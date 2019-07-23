@@ -9,7 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
 interface Props {
-  data: any
+  data: {
+    Name?: string
+  }
 }
 const Menubar: React.FC<Props> = (props: Props) => {
 

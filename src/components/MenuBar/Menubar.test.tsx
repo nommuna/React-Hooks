@@ -13,13 +13,31 @@ describe('<Bar> component', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Menubar data = {Mockdata}/>, div);
+    ReactDOM.render(<Menubar data = {Mockdata[0]}/>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  //Need to figure out why this test is not working.
-  it.skip('should have Dashboard as title', () => {
-    const wrapper = shallow(<Menubar data = {Mockdata}/>);
-    expect(wrapper.text()).toContain('App Name');
+  it('should have a value when passed props', () => {
+    const wrapper = shallow(<Menubar data={Mockdata[1]}/>);
+    //console.log(wrapper.find('#Title').debug());
+    expect(wrapper.find('#Title')).toBeDefined();
   });
+
+  it('should display the name when props is passed in', () => {
+    const wrapper = shallow(<Menubar data={Mockdata[1]}/>);
+    //console.log(wrapper.find('#Title').debug());
+    expect(wrapper.find('#Title').text()).toContain('Veribet');
+  });
+
+  it('should display nothing when empty props are passed in', () => {
+    const Testdata = {
+      Name: ""
+    }
+    const wrapper = shallow(<Menubar data = {Testdata} />);
+    //console.log(wrapper.debug());
+    expect(wrapper.find('#Title').text()).toContain('');
+  });
+
+
+  
 });
