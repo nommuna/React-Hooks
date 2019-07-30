@@ -72,13 +72,12 @@ const Menubar: React.FC<Props> = (props: Props) => {
 
   const classes = useStyles();
 
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
   
   setTimeout(() => {
     let currentTime = new Date();
     setTime(currentTime.toLocaleTimeString());
-  }, 1000)
-
+  }, 1000);
 
   return (
     <div className={classes.root}>
