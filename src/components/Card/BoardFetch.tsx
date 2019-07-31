@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import axios from 'axios';
 
 const BoardFetch: React.FC = () => {
     const [data, setData] = useState({items: []});
@@ -27,9 +28,8 @@ const BoardFetch: React.FC = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch("https://hn.algolia.com/api/v1/search?query=react");
-            const results = await response.json();
-            setData({items: results.hits});
+            const results = await axios.get("https://hn.algolia.com/api/v1/search?query=react");
+            setData({items: results.data});
 
         }
         fetchData();
