@@ -27,6 +27,12 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run generate`
+
+Builds boilerplate for react class component(RC, SCSS, and Test files). <br>
+Runs a bash file that will ask for the name of the component. Then it will build it out using [hygen](https://www.hygen.io/).<br>
+Make sure to give permissions to bash file `chmod +x ./build.sh`
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
